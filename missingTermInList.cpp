@@ -38,6 +38,20 @@ static long findMissing(std::vector<long> list){
     return 0;
 }
 
+/* 
+BEST PRACTICE
+
+#include <numeric>
+
+static long findMissing(std::vector<long> list)
+{
+  long long expectedSum = (list.front() + list.back()) * (list.size() + 1);
+  long long actualSum = std::accumulate(list.begin(), list.end(), 0ll);
+  
+  return (expectedSum - 2 * actualSum) / 2;
+} 
+ */
+
 int main(){
     long temp = findMissing({1,3,5,9,11});
     std:: cout << "Missing Num = " << temp << std::endl;
