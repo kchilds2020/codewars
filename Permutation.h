@@ -39,6 +39,16 @@ class Permuation{
         return result;
     }
 
+
+    int josephusSurvivor(int n, int k) {
+        // your code here
+        int survivor = 0;
+        for (int i = 2; i < n + 1; i ++) {
+            survivor = (survivor + k)%i;
+        }
+        return survivor + 1;
+    }
+
     /* BEST PRACTICE
     
     std::vector <int> josephus(std::vector <int> items, int k) {
